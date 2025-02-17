@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameLogicBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris.UI\\GameLogicBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,16 +26,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameLogic.cs",
-              "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
-              "RelativeDocumentMoniker": "Tetris\\GameLogic.cs",
-              "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
-              "RelativeToolTip": "Tetris\\GameLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GameLogicBase.cs",
+              "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameLogicBase.cs",
+              "RelativeDocumentMoniker": "Tetris.UI\\GameLogicBase.cs",
+              "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameLogicBase.cs",
+              "RelativeToolTip": "Tetris.UI\\GameLogicBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T18:26:43.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T10:34:26.956Z"
             },
             {
               "$type": "Document",
@@ -41,10 +44,22 @@
               "RelativeDocumentMoniker": "Tetris\\Program.cs",
               "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\Program.cs",
               "RelativeToolTip": "Tetris\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T18:25:35.164Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameLogic.cs",
+              "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
+              "RelativeDocumentMoniker": "Tetris\\GameLogic.cs",
+              "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
+              "RelativeToolTip": "Tetris\\GameLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T18:26:43.533Z"
             },
             {
               "$type": "Bookmark",

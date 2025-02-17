@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\IGameView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris.UI\\IGameView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tetris.UI\\GameView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameLogicBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "IGameView.cs",
+              "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\IGameView.cs",
+              "RelativeDocumentMoniker": "Tetris.UI\\IGameView.cs",
+              "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\IGameView.cs",
+              "RelativeToolTip": "Tetris.UI\\IGameView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T12:02:04.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameView.cs",
+              "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameView.cs",
+              "RelativeDocumentMoniker": "Tetris.UI\\GameView.cs",
+              "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameView.cs",
+              "RelativeToolTip": "Tetris.UI\\GameView.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T12:01:58.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GameLogicBase.cs",
               "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris.UI\\GameLogicBase.cs",
               "RelativeDocumentMoniker": "Tetris.UI\\GameLogicBase.cs",
@@ -34,31 +68,30 @@
               "RelativeToolTip": "Tetris.UI\\GameLogicBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T10:34:26.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T10:34:26.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\Program.cs",
               "RelativeDocumentMoniker": "Tetris\\Program.cs",
               "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\Program.cs",
               "RelativeToolTip": "Tetris\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T18:25:35.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
               "RelativeDocumentMoniker": "Tetris\\GameLogic.cs",
               "ToolTip": "C:\\Users\\Mxolisi\\Downloads\\sportsbook-technical-test-output-blank-test\\sportsbook-technical-test-output-blank-test\\Tetris\\GameLogic.cs",
               "RelativeToolTip": "Tetris\\GameLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T18:26:43.533Z",
               "EditorCaption": ""
