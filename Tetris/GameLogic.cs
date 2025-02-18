@@ -3,8 +3,20 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Tetris.UI;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Tetris;
+
+
+//FEATURES IMPLEMENTED
+// Tetris Piece Management
+// Collision Detection & Handling
+// Removing Full Lines & Shifting Blocks
+// Game Scoring System
+// Game Over Condition
+// Next Piece Preview
+// Game Restart Functionality by Pressing R
 
 public class GameLogic : GameLogicBase
 {
@@ -14,6 +26,8 @@ public class GameLogic : GameLogicBase
     private Tetrimino currentPiece;
     private Random random;
     private Tetrimino nextPiece;
+    private int totalLinesCleared = 0; // Track the total lines cleared
+
 
     private int tickCounter = 0;
     private const int moveThreshold = 3; //Slowing down the time
@@ -22,11 +36,11 @@ public class GameLogic : GameLogicBase
     {
         grid = new Color[Columns, Rows];
         random = new Random();
-        Console.WriteLine("Game Initialized");
 
         SpawnNewPiece();
 
     }
+
 
     private void SpawnNewPiece()
     {
@@ -36,24 +50,44 @@ public class GameLogic : GameLogicBase
         }
 
         currentPiece = nextPiece; // Use the stored piece
-        nextPiece = new Tetrimino(random.Next(7)); // Generate new next piece
+        nextPiece = new Tetrimino(random.Next(7)); // Generate a new next piece
 
-        Console.WriteLine($"New Piece Spawned at {currentPiece.Position}");
-
-        if (!IsColliding(currentPiece, 0, 0))
+        // Check if the newly spawned piece immediately collides with existing blocks
+        if (IsColliding(currentPiece, 0, 0))
         {
-            DrawPiece(currentPiece, true);
+            GameOver(); // Call game over logic
+            return;
         }
 
-        // Display next piece by manually drawing it in the "Next" section
-        DisplayNextPiece();
+        DrawPiece(currentPiece, true); // Draw new piece
 
+        // Display next piece in the "Next" preview area
+        DisplayNextPiece();
+    }
+
+
+    private bool isGameOver = false; // Track game over state
+
+    private void GameOver()
+    {
+
+        isGameOver = true; // Set the game state to over
+
+        // Prevent further movement and updates
+        StopGameLoop();
+    }
+
+    private void StopGameLoop()
+    {
+        isGameOver = true;
 
     }
 
 
     private void DisplayNextPiece()
     {
+        if (isGameOver) return; // Stop updating next piece on game over
+
         if (nextPiece == null) return;
 
         // Clear the preview area before drawing the new piece
@@ -65,22 +99,21 @@ public class GameLogic : GameLogicBase
             }
         }
 
-        // Draw the next piece in the preview area
+        // Draw the next piece in the NEXT area
         foreach (var block in nextPiece.GetBlocks())
         {
             int x = block.X;
             int y = block.Y;
-            View.SetPixelHelpArea(x, y, nextPiece.Color); // Draw new piece
+            View.SetPixelHelpArea(x, y, nextPiece.Color);
         }
     }
 
 
-
     protected override void OnTimerTick()
     {
-        Console.WriteLine("Timer Tick");
-        tickCounter++; // Increment the counter
-        Console.WriteLine($"Timer Tick: {tickCounter}");
+        if (isGameOver) return;
+
+        tickCounter++;
 
         if (tickCounter >= moveThreshold)
         {
@@ -89,9 +122,17 @@ public class GameLogic : GameLogicBase
         }
     }
 
+
     protected override void OnKeyPressed(Keys key)
     {
-        Console.WriteLine($"Key Pressed: {key}");
+        if (key == Keys.R)
+        {
+            RestartGame(); // Restart the game when "R" is pressed
+            return;
+        }
+
+        if (isGameOver) return; // Ignore input after game over
+
 
         switch (key)
         {
@@ -110,6 +151,42 @@ public class GameLogic : GameLogicBase
         }
     }
 
+    private void ClearBoard()
+    {
+
+        // Clear the game grid in memory
+        for (int x = 0; x < Columns; x++)
+        {
+            for (int y = 0; y < Rows; y++)
+            {
+                grid[x, y] = default(Color); // Reset each cell in the grid
+                View.SetPixelMainArea(x, y, Color.Black); // Clear UI pixels
+            }
+        }
+    }
+
+
+    public void RestartGame()
+    {
+
+        isGameOver = false; // Reset game-over state
+
+        ClearBoard(); // 🔹 Ensure UI is cleared when restarting
+
+        View.Score = 0; // Reset the score
+        totalLinesCleared = 0; // Reset the lines count
+        View.Lines = 0;
+
+        nextPiece = null;
+        currentPiece = null;
+
+        SpawnNewPiece(); // Start a new game
+    }
+
+
+
+
+
     private bool IsColliding(Tetrimino piece, int dx, int dy)
     {
         foreach (var block in piece.GetBlocks())
@@ -120,7 +197,6 @@ public class GameLogic : GameLogicBase
             if (x < 0 || x >= Columns || y < 0 || y >= Rows || grid[x, y] != Color.Empty)
 
                 return true;
-            Console.WriteLine("Collision detected");
 
         }
         return false;
@@ -136,7 +212,6 @@ public class GameLogic : GameLogicBase
         }
         else if (dy > 0)
         {
-            Console.WriteLine("Piece Locked");
 
             LockPiece();
         }
@@ -144,12 +219,10 @@ public class GameLogic : GameLogicBase
 
     private void RotatePiece()
     {
-        Console.WriteLine("Rotating Piece");
 
         currentPiece.Rotate();
         if (IsColliding(currentPiece, 0, 0))
         {
-            Console.WriteLine("Rotation Collision, Reverting");
 
             currentPiece.RotateBack();
         }
@@ -169,35 +242,68 @@ public class GameLogic : GameLogicBase
 
     private void ClearFullLines()
     {
-        for (int y = 0; y < Rows; y++)
+        int linesCleared = 0;
+
+        for (int y = 0; y < Rows; y++) // Iterate over each row
         {
             bool fullLine = true;
-            for (int x = 0; x < Columns; x++)
+            for (int x = 0; x < Columns; x++) // Check all columns in the row
             {
-                if (grid[x, y] == Color.Empty)
+                if (grid[x, y] == default(Color)) // Instead of Color.Empty, use default(Color)
                 {
                     fullLine = false;
                     break;
                 }
             }
+
             if (fullLine)
             {
                 ShiftLinesDown(y);
-                View.Score += 100;
+                linesCleared++;
+            }
+        }
+        // Increase score based on how many lines were cleared
+        if (linesCleared > 0)
+        {
+            totalLinesCleared += linesCleared;
+            View.Lines = totalLinesCleared;
+            int[] lineScores = { 0, 100, 300, 500, 800 }; // Scoring system
+            View.Score += lineScores[Math.Min(linesCleared, 4)];
+        }
+        RedrawGrid();
+
+    }
+
+    private void RedrawGrid()
+    {
+        for (int x = 0; x < Columns; x++)
+        {
+            for (int y = 0; y < Rows; y++)
+            {
+                View.SetPixelMainArea(x, y, grid[x, y]); // Update UI for each block
             }
         }
     }
 
+
     private void ShiftLinesDown(int clearedRow)
     {
-        for (int y = clearedRow; y > 0; y--)
+        for (int y = clearedRow; y > 0; y--) // Start from cleared row and move upwards
         {
             for (int x = 0; x < Columns; x++)
             {
-                grid[x, y] = grid[x, y - 1];
+                grid[x, y] = grid[x, y - 1]; // Move row above down
             }
         }
+
+        //Clear the top row to prevent residual blocks
+        for (int x = 0; x < Columns; x++)
+        {
+            grid[x, 0] = default(Color); // Reset the top row
+            View.SetPixelMainArea(x, 0, Color.Black);
+        }
     }
+
 
     private void DrawPiece(Tetrimino piece, bool place)
     {
